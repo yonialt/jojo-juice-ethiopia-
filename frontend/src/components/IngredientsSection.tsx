@@ -2,60 +2,60 @@
 
 const FEATURES = [
   {
-    title: "Blood Oranges",
-    tag: "Naturally pressed, nothing added",
-    body: "Hand-picked at dawn from volcanic Sicilian groves. Pressed whole—rind, pith, and all—for bitter-free depth and a slow-release sugar curve.",
+    title: "Raw Milk & Water Base",
+    tag: "Real Dairy · 1.0g Protein / 100ml",
+    body: "Formulated with a liquid base of water and real raw milk, delivering 1.0g of protein per 100ml (2% daily requirement) for a smooth, milky beverage texture.",
   },
   {
-    title: "Botanical Extracts",
-    tag: "Ginger, turmeric & elderflower",
-    body: "Cold-macerated rather than cooked, so curcumin and gingerols stay live and potent—quieting inflammation and sharpening focus all day.",
+    title: "Sweetened & Balanced",
+    tag: "42.5 kcal · 11.5g Carbohydrates",
+    body: "Blended with white sugar and balanced low-calorie sweeteners (sodium cyclamate, acesulfame K, aspartame) to deliver signature flavor at 42.5 kcal / 178 kJ per 100ml.",
   },
   {
-    title: "Essential Vitamins",
-    tag: "Bioavailable B-complex, D3 & zinc",
-    body: "A micronutrient matrix engineered for rapid cellular absorption. No pills, no fillers—just nutrition your body can actually use.",
+    title: "Smooth Texture Matrix",
+    tag: "Stabilizers & Acidity Regulators",
+    body: "Enhanced with pectin, sodium carboxymethyl cellulose, gellan gum, and polyglycerin fatty acid ester alongside citric acid and lactic acid for perfect consistency.",
   },
 ];
 
 const PROCESS = [
   {
-    title: "Pure Hydration",
-    tag: "Electrolytes · Naturally isotonic",
-    body: "Naturally isotonic and rich in electrolytes, so every sip rehydrates faster than water alone—and tastes like a slow afternoon.",
+    title: "Designated Fruit Flavors",
+    tag: "Apple · Strawberry · Mango · Milk",
+    body: "Infused with designated food aromas to craft refreshing, distinct flavor profiles anchored by a rich milk base.",
   },
   {
-    title: "Cold-Pressed Process",
-    tag: "14,000 PSI · 0° heat",
-    body: "A hydraulic press extracts every drop without thermal oxidation. Live enzymes and phytonutrients survive intact—nothing cooked, nothing lost.",
+    title: "Quality Preservation",
+    tag: "Potassium Sorbate · Sodium Citrate",
+    body: "Balanced with acidity regulators and potassium sorbate to guarantee product safety and shelf-stable freshness.",
   },
   {
-    title: "Organic Sourcing",
-    tag: "Regenerative · 72h farm-to-bottle",
-    body: "Grown by partner farms across the Mediterranean, picked at peak, pressed within 72 hours, and sealed in small batches by hand.",
+    title: "Allergen & Health Info",
+    tag: "Phenylalanine & Dairy Notice",
+    body: "Contains aspartame (unsafe for PKU) and real raw milk base. Not suitable for severe lactose intolerance or milk allergies.",
   },
 ];
 
 const PILLS = [
-  "Vitamin C · 120% DV",
-  "0g added sugar",
-  "Anti-inflammatory",
-  "Cold-extracted",
-  "B-complex",
-  "Bioavailable",
+  "42.5 kcal / 100ml",
+  "1.0g Milk Protein",
+  "Apple, Mango & Strawberry",
+  "Raw Milk Base",
+  "42.5 kcal (2% DV)",
+  "Pectin Stabilized",
 ];
 
 const BADGES = [
-  "Young coconut water base",
-  "14,000 PSI, zero heat",
-  "Regenerative partner farms",
+  "Water & Raw Milk Base",
+  "Sweetened with Sugar & Aspartame",
+  "Contains Real Dairy",
 ];
 
 const BOTTOM_PILLS = [
-  "0g added sugar",
-  "No preservatives",
-  "No concentrates",
-  "Certified organic",
+  "42.5 kcal / 100ml",
+  "178 kJ Energy",
+  "1.0g Protein",
+  "~11.5g Carbohydrates",
 ];
 
 export default function IngredientsSection() {
@@ -65,15 +65,14 @@ export default function IngredientsSection() {
       className="relative bg-primary-bg px-6 py-24 md:px-10 md:py-32"
     >
       <div className="mx-auto max-w-6xl">
-        {/* Left-aligned heading block (reference video composition) */}
+        {/* Left-aligned heading block */}
         <div className="max-w-2xl">
-          <p className="eyebrow mb-5">01 · Ingredients</p>
+          <p className="eyebrow mb-5">01 · Ingredients & Nutrition</p>
           <h2 className="text-balance text-4xl font-bold tracking-tight text-primary-text md:text-5xl">
-            Nothing but what nature grew.
+            JoJo Flavored Milk & Juice Drinks
           </h2>
           <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-primary-text/65">
-            Six obsessions in one bottle. Every ingredient is chosen for what it
-            does—and what it refuses to be: processed, added, or unnecessary.
+            Full nutritional profile, ingredient breakdown, and allergen information sourced directly from manufacturer specifications.
           </p>
         </div>
 
@@ -142,16 +141,16 @@ export default function IngredientsSection() {
         {/* Bottom stats + pills */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 border-t border-primary-text/8 pt-8">
           <div className="flex items-baseline gap-2">
-            <span className="text-xl font-bold text-primary-text">Electrolytes</span>
-            <span className="text-sm text-primary-text/50">Naturally isotonic</span>
+            <span className="text-xl font-bold text-primary-text">42.5 kcal</span>
+            <span className="text-sm text-primary-text/50">Per 100ml (178 kJ)</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-xl font-bold text-primary-text">14,000 PSI</span>
-            <span className="text-sm text-primary-text/50">0° heat</span>
+            <span className="text-xl font-bold text-primary-text">1.0g Protein</span>
+            <span className="text-sm text-primary-text/50">Raw milk base</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-xl font-bold text-primary-text">72h farm-to-bottle</span>
-            <span className="text-sm text-primary-text/50">Regenerative</span>
+            <span className="text-xl font-bold text-primary-text">~11.5g Carbs</span>
+            <span className="text-sm text-primary-text/50">Sugar & Flavors</span>
           </div>
         </div>
 

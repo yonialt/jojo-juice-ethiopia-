@@ -7,7 +7,7 @@ import { useEffect, useRef, useState, useSyncExternalStore, type Ref } from "rea
 import Navbar from "@/components/Navbar";
 import CanvasSequence from "@/components/CanvasSequence";
 import FlavorTrioSection from "@/components/FlavorTrioSection";
-import IngredientsSection from "@/components/IngredientsSection";
+//import IngredientsSection from "@/components/IngredientsSection";
 import PricingSection from "@/components/PricingSection";
 import StorySection from "@/components/StorySection";
 import SpecsSection from "@/components/SpecsSection";
@@ -63,15 +63,6 @@ function HeroStatement({ entranceRef }: { entranceRef?: Ref<HTMLDivElement> }) {
       style={{ opacity: 0 }}
       className="pointer-events-none fixed inset-x-0 top-[14vh] z-10 flex flex-col items-center px-6 text-center lg:top-[17vh] lg:items-start lg:px-[6vw] lg:text-left"
     >
-      <h1 className="bg-gradient-to-b from-primary-text via-primary-text to-accent-deep bg-clip-text pb-2 text-[clamp(2.2rem,9vw,3.6rem)] font-bold uppercase leading-[0.92] tracking-[-0.02em] text-transparent lg:text-[clamp(2.8rem,4.2vw,4.8rem)]">
-        Pure
-        <br className="hidden lg:inline" />
-        juice.
-        <br />
-        Nothing
-        <br className="hidden lg:inline" />
-        more.
-      </h1>
     </div>
   );
 }
@@ -111,25 +102,9 @@ function EditorialLabels({ entranceRef }: { entranceRef?: Ref<HTMLDivElement> })
       style={{ opacity: 0 }}
       className="pointer-events-none fixed inset-0 z-10 hidden lg:block"
     >
-      <div data-hero-label className="absolute left-[6vw] top-[32vh] flex items-center gap-3">
-        <span className="h-px w-10 bg-accent/40" />
-        <span className="text-[11px] font-semibold uppercase tracking-[0.26em] text-primary-text/60">
-          01 · Cold pressed
-        </span>
-      </div>
-      <div data-hero-label className="absolute right-[6vw] top-[40vh] flex items-center gap-3">
-        <span className="text-[11px] font-semibold uppercase tracking-[0.26em] text-primary-text/60">
-          100% natural
-        </span>
-        <span className="h-px w-10 bg-accent/40" />
-      </div>
-      <div data-hero-label className="absolute left-[6vw] top-[48vh] flex items-center gap-3">
-        <span className="h-px w-10 bg-accent/40" />
-        <span className="text-[11px] font-semibold uppercase tracking-[0.26em] text-primary-text/60">
-          Made fresh
-        </span>
-      </div>
+
     </div>
+
   );
 }
 
@@ -142,9 +117,7 @@ function FinaleWordmark({ entranceRef }: { entranceRef?: Ref<HTMLDivElement> }) 
       style={{ opacity: 0 }}
       className="pointer-events-none fixed inset-x-0 top-[78vh] z-10 flex flex-col items-center gap-2.5"
     >
-      <span className="text-[11px] font-semibold uppercase tracking-[0.36em] text-primary-text/55">
-        JoJo Juice
-      </span>
+
       <span className="h-px w-8 bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
     </div>
   );
@@ -339,7 +312,6 @@ export default function Page() {
           hero shot settles on the bottle alone. */}
       <FlavorTrioSection />
 
-      <IngredientsSection />
       <PricingSection />
       <StorySection />
       <SpecsSection />

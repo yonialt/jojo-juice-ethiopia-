@@ -6,7 +6,6 @@ import MagneticButton from "@/components/MagneticButton";
 
 const LINKS = [
   { label: "Overview", href: "#overview" },
-  { label: "Ingredients", href: "#ingredients" },
   { label: "Pricing", href: "#pricing" },
   { label: "Our Story", href: "#story" },
   { label: "Contact", href: "#contact" },
@@ -113,14 +112,12 @@ export default function Navbar() {
             className="flex h-10 w-10 flex-col items-center justify-center gap-[5px] md:hidden"
           >
             <span
-              className={`h-px w-5 bg-primary-text transition-transform duration-300 ${
-                open ? "translate-y-[3px] rotate-45" : ""
-              }`}
+              className={`h-px w-5 bg-primary-text transition-transform duration-300 ${open ? "translate-y-[3px] rotate-45" : ""
+                }`}
             />
             <span
-              className={`h-px w-5 bg-primary-text transition-transform duration-300 ${
-                open ? "-translate-y-[3px] -rotate-45" : ""
-              }`}
+              className={`h-px w-5 bg-primary-text transition-transform duration-300 ${open ? "-translate-y-[3px] -rotate-45" : ""
+                }`}
             />
           </button>
         </div>

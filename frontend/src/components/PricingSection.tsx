@@ -1,170 +1,119 @@
 "use client";
 
-import { useState } from "react";
-
 const TIERS = [
   {
-    name: "Single Pack",
+    name: "Single Unit (200g)",
     badge: "Try JoJo",
-    price: 9.0,
+    price: 17.0,
     unit: "per bottle",
     bullets: [
-      "One 330ml bottle, chilled",
-      "Cold-pressed to order",
-      "Free shipping over $25",
+      "Available in Apple, Strawberry, Mango, & Natural Milk",
+      "Cold-pressed organic ingredients",
+      "Chilled delivery ready to enjoy",
     ],
     cta: "Add to cart",
     popular: false,
   },
   {
-    name: "6-Pack Bundle",
-    badge: "Most popular",
-    price: 48.0,
-    unit: "per 6-pack",
+    name: "Carton / Pack (24 Pcs)",
+    badge: "Best Value",
+    price: 333.0,
+    unit: "per pack",
     bullets: [
-      "Six 330ml bottles",
-      "Save $6 vs. singles",
-      "Chilled box, 48h delivery",
-      "Mix any flavors",
+      "Full case of 24 (200g) bottles",
+      "Mix and match your favorite flavors",
+      "Ideal for events or weekly stock",
     ],
     cta: "Order JoJo Juice",
     popular: true,
   },
-  {
-    name: "Monthly Subscription",
-    badge: "Save 15% + free shipping",
-    price: 96.0,
-    unit: "per month · 12 bottles",
-    bullets: [
-      "12 bottles every month",
-      "15% off every delivery",
-      "Free shipping, always",
-      "Pause or cancel anytime",
-    ],
-    cta: "Add to cart",
-    popular: false,
-  },
 ];
 
 function formatPrice(v: number) {
-  return `$${v.toFixed(2)}`;
+  return `ETB ${v.toFixed(2)}`;
 }
 
 export default function PricingSection() {
-  const [subscribed, setSubscribed] = useState(false);
-
   return (
     <section
       id="pricing"
-      className="relative bg-secondary-bg px-6 py-24 md:px-10 md:py-32"
+      className="relative bg-secondary-bg px-6 py-20 md:px-10 md:py-28"
     >
-      <div className="mx-auto max-w-6xl">
-        <p className="eyebrow mb-6 text-center">02 · Pricing</p>
-        <h2 className="text-balance text-center text-4xl font-bold tracking-tight text-primary-text md:text-5xl">
+      <div className="mx-auto max-w-5xl">
+        <p className="eyebrow mb-3 text-center text-xs font-semibold uppercase tracking-widest text-primary-text/60">
+          02 · Pricing
+        </p>
+        <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-primary-text md:text-4xl">
           Simple pricing, serious nutrition.
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-pretty text-center text-lg text-primary-text/65">
-          One bottle or a standing ritual—pick your pour. Every order ships
-          chilled, pressed, and sealed within 72 hours of harvest.
+        <p className="mx-auto mt-3 max-w-lg text-pretty text-center text-base text-primary-text/65">
+          One bottle or a full case—pick your order. Every purchase ships
+          chilled, pressed, and sealed for peak freshness.
         </p>
 
-        {/* One-time vs Subscribe toggle */}
-        <div className="mt-10 flex justify-center">
-          <div className="inline-flex rounded-full border border-primary-text/10 bg-white p-1">
-            <button
-              type="button"
-              onClick={() => setSubscribed(false)}
-              aria-pressed={!subscribed}
-              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                !subscribed
-                  ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_4px_14px_rgba(229,169,60,0.35)]"
-                  : "text-primary-text/60 hover:text-primary-text"
-              }`}
-            >
-              One-Time Purchase
-            </button>
-            <button
-              type="button"
-              onClick={() => setSubscribed(true)}
-              aria-pressed={subscribed}
-              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                subscribed
-                  ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_4px_14px_rgba(229,169,60,0.35)]"
-                  : "text-primary-text/60 hover:text-primary-text"
-              }`}
-            >
-              Subscribe &amp; Save 15%
-            </button>
-          </div>
-        </div>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {TIERS.map((tier) => {
-            const price = subscribed ? tier.price * 0.85 : tier.price;
-            return (
-              <div
-                key={tier.name}
-                className={`relative flex flex-col rounded-3xl border bg-white p-7 transition-all duration-300 ${
-                  tier.popular
-                    ? "border-accent/40 shadow-[0_18px_50px_rgba(229,169,60,0.14)] md:-translate-y-2"
-                    : "border-primary-text/8 shadow-[0_1px_3px_rgba(26,26,26,0.05)] hover:-translate-y-1"
+        {/* Responsive Grid for 2 items */}
+        <div className="mx-auto mt-12 grid max-w-3xl gap-8 md:grid-cols-2">
+          {TIERS.map((tier) => (
+            <div
+              key={tier.name}
+              className={`relative flex flex-col justify-between rounded-3xl border bg-white/60 p-8 backdrop-blur-md transition-all duration-300 hover:shadow-xl ${tier.popular
+                  ? "border-accent/50 shadow-lg shadow-accent/10 md:-translate-y-2 ring-1 ring-accent/30"
+                  : "border-primary-text/10 shadow-sm hover:-translate-y-1"
                 }`}
-              >
-                <span
-                  className={`inline-block self-start rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] ${
-                    tier.popular
-                      ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_4px_16px_rgba(229,169,60,0.4)]"
-                      : "border border-accent/30 bg-accent/8 text-accent-deep"
-                  }`}
-                >
-                  {tier.badge}
-                </span>
-                <h3 className="mt-4 text-lg font-bold tracking-tight text-primary-text">
+            >
+              <div>
+                <div className="flex items-center justify-between">
+                  <span
+                    className={`inline-block rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider ${tier.popular
+                        ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-sm"
+                        : "border border-accent/30 bg-accent/10 text-accent-deep"
+                      }`}
+                  >
+                    {tier.badge}
+                  </span>
+                </div>
+
+                <h3 className="mt-4 text-xl font-bold tracking-tight text-primary-text">
                   {tier.name}
                 </h3>
 
-                <div className="mt-4 flex items-end gap-2">
-                  <span className="text-5xl font-bold tracking-tight text-primary-text">
-                    {formatPrice(price)}
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span className="text-4xl font-extrabold tracking-tight text-primary-text">
+                    {formatPrice(tier.price)}
                   </span>
-                  <span className="pb-1.5 text-sm text-primary-text/50">{tier.unit}</span>
-                  {subscribed && (
-                    <span className="pb-1.5 text-sm text-primary-text/40 line-through">
-                      {formatPrice(tier.price)}
-                    </span>
-                  )}
+                  <span className="text-xs text-primary-text/50">
+                    {tier.unit}
+                  </span>
                 </div>
 
-                <ul className="mt-5 space-y-2.5">
+                <ul className="mt-6 space-y-3">
                   {tier.bullets.map((b) => (
                     <li
                       key={b}
-                      className="flex items-start gap-2 text-sm text-primary-text/65"
+                      className="flex items-start gap-2.5 text-xs font-medium text-primary-text/75"
                     >
-                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                      <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                       {b}
                     </li>
                   ))}
                 </ul>
-
-                <a
-                  href="#pricing"
-                  className={`mt-auto pt-7 text-center text-sm font-semibold transition-all duration-300 ${
-                    tier.popular
-                      ? "mt-7 rounded-full bg-gradient-to-r from-accent to-accent-deep px-6 py-3.5 text-white shadow-[0_0_24px_rgba(229,169,60,0.3)] hover:scale-[1.03] hover:shadow-[0_0_36px_rgba(229,169,60,0.45)]"
-                      : "rounded-full border border-primary-text/12 px-6 py-3.5 text-primary-text hover:border-accent/50 hover:text-accent-deep"
-                  }`}
-                >
-                  {tier.cta}
-                </a>
               </div>
-            );
-          })}
+
+              <a
+                href="#pricing"
+                className={`mt-8 block w-full rounded-full text-center text-xs font-bold transition-all duration-300 py-3.5 ${tier.popular
+                    ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-md shadow-accent/20 hover:scale-[1.02] hover:shadow-lg"
+                    : "border border-primary-text/15 text-primary-text hover:border-accent hover:text-accent-deep"
+                  }`}
+              >
+                {tier.cta}
+              </a>
+            </div>
+          ))}
         </div>
 
-        <p className="mt-10 text-center text-sm text-primary-text/45">
-          All bottles 330ml · Cold-pressed, organic, zero added sugar · Ships
-          chilled nationwide
+        <p className="mt-10 text-center text-xs text-primary-text/50">
+          All bottles 200g · Cold-pressed organic ingredients, zero added sugar · Delivered chilled
         </p>
       </div>
     </section>
