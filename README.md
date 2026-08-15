@@ -24,8 +24,8 @@ A modern, high-performance 3D interactive web showcase and e-commerce experience
 
 ### Prerequisites
 
-* **Node.js**: v18.x or higher
-* **npm** or **yarn** / **pnpm**
+* **Node.js**: v18.x or higher but best 26
+* **npm** 
 
 ### Installation
 
