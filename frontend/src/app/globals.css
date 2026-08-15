@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary-bg: #f7f5f0;
+  --color-secondary-bg: #f2eee3;
+  --color-primary-text: #1a1a1a;
+  --color-accent: #e5a93c;
+  --color-accent-deep: #d48216;
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  --background: #f7f5f0;
+  --foreground: #1a1a1a;
+}
+
+/* Scroll smoothness is provided by Lenis (SmoothScrollProvider); a CSS
+   scroll-behavior here would fight its per-frame scrollTo steps. scroll-padding
+   keeps anchor targets clear of the fixed header. */
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(229, 169, 60, 0.26);
+}
+
+/* Hide scrollbar for cinematic feel */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Apple-style nav link underline */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 0;
+  background: currentColor;
+  opacity: 0.45;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Small caps accent label */
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #d48216;
+}
+
+/* Scroll cue: a small accent dot eases down the hairline on a loop. The only
+   ambient motion in the hero — everything else is scrubbed by scroll. */
+@keyframes cue-drop {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 32px);
+    opacity: 0;
+  }
+}
+
+.cue-dot {
+  animation: cue-drop 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Gentle product float (Story section) */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+
+  .cue-dot {
+    animation: none;
+  }
+}
