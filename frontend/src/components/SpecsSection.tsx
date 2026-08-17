@@ -107,7 +107,7 @@ export default function SpecsSection() {
           </div>
 
           {/* Nutrition facts label */}
-          <div className="rounded-3xl border border-primary-text/15 bg-white p-7 md:p-9">
+          <div className="max-w-md rounded-3xl border border-primary-text/15 bg-white p-5 md:p-6">
             <div className="flex items-baseline justify-between gap-4">
               <p className="text-2xl font-extrabold tracking-tight text-primary-text">
                 JoJo Juice · Nutrition

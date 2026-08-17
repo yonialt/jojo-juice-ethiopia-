@@ -80,7 +80,7 @@ export default function FlavorTrioSection() {
             className="absolute left-1/2 top-1/2 z-20 h-[360px] w-44 -translate-x-1/2 -translate-y-1/2 sm:h-[400px] sm:w-48"
           >
             <Image
-              src="/images/bottle-green.png"
+              src="/images/green-bottle.png"
               alt="JoJo Green Citrus flavor"
               fill
               className="object-contain drop-shadow-md"
@@ -92,7 +92,7 @@ export default function FlavorTrioSection() {
             className="absolute left-1/2 top-1/2 z-30 h-[420px] w-52 -translate-x-1/2 -translate-y-1/2 sm:h-[460px] sm:w-56"
           >
             <Image
-              src="/images/bottle-yellow.png"
+              src="/images/yellow-bottle.png"
               alt="JoJo Yellow Mango flavor"
               fill
               priority
@@ -110,7 +110,7 @@ export default function FlavorTrioSection() {
             className="absolute left-1/2 top-1/2 z-20 h-[360px] w-44 -translate-x-1/2 -translate-y-1/2 sm:h-[400px] sm:w-48"
           >
             <Image
-              src="/images/bottle-red.png"
+              src="/images/red-bottle.png"
               alt="JoJo Red Strawberry flavor"
               fill
               className="object-contain drop-shadow-md"

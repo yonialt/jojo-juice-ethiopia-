@@ -7,10 +7,12 @@ import { useEffect, useRef, useState, useSyncExternalStore, type Ref } from "rea
 import Navbar from "@/components/Navbar";
 import CanvasSequence from "@/components/CanvasSequence";
 import FlavorTrioSection from "@/components/FlavorTrioSection";
+import ProductCarousel from "@/components/ProductCarousel";
 //import IngredientsSection from "@/components/IngredientsSection";
 import PricingSection from "@/components/PricingSection";
 import StorySection from "@/components/StorySection";
 import SpecsSection from "@/components/SpecsSection";
+import NewProductsSection from "@/components/NewProductsSection";
 import ClosingSection from "@/components/ClosingSection";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -139,12 +141,14 @@ export default function Page() {
   const cueRef = useRef<HTMLDivElement>(null);
   const wordmarkRef = useRef<HTMLDivElement>(null);
 
-  // Bottle scale and placement are responsive: on desktop the bottle sits
-  // large and centered with generous side voids for the editorial composition;
-  // on small screens it fills proportionally more of the width while staying
-  // clear of the fixed navbar, the hero statement and the scroll cue.
-  const canvasZoom = isDesktop ? 0.78 : 0.92;
-  const shiftUpVh = isDesktop ? 4 : 0;
+  // Bottle scale and placement are responsive. Zoom crops into the portrait
+  // 864x1056 frame (the bottle occupies ~50% of frame height), so 1.12 renders
+  // the bottle at ~56% of viewport height on desktop and 1.6 at ~46% on small
+  // screens — a big hero presence, with the ingredient composition still
+  // mostly in frame at its peak. shiftUpVh re-centers the bottle vertically
+  // once the cropped frame is taller than the viewport.
+  const canvasZoom = isDesktop ? 1.12 : 1.6;
+  const shiftUpVh = isDesktop ? 7 : 0;
 
   // Master scrubbed timeline for the product sequence: a GSAP ScrollTrigger
   // scrubs a proxy 0→1 across the runway, driving the canvas frame index (the
@@ -315,6 +319,13 @@ export default function Page() {
       <PricingSection />
       <StorySection />
       <SpecsSection />
+      <NewProductsSection />
+
+      {/* The Collection — interactive 3D product carousel: filter pills,
+          depth arc, and prev/next cycling. Sits after the shop grid as the
+          final browse moment before the closing CTA. */}
+      <ProductCarousel />
+
       <ClosingSection />
     </main>
   );
